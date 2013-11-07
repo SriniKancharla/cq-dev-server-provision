@@ -10,3 +10,4 @@
 include_recipe "java"
 include_recipe "tomcat_latest"
 include_recipe "subversion"
+include_recipe "git::server"
