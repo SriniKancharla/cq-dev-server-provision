@@ -27,6 +27,6 @@ https://help.github.com/articles/generating-ssh-keys
 After the ssh key is added, just copy the bootstrap script,(For bootstapping Ubuntu 12.04, use:
 bootstrap_chef.sh and For CentOS Use:  ) to the home folder of the user and run it.
 
-This would update and install all the nessesary software.
+This would update and install all the nessesary software. The script would need you to confirm adding github.com to known hosts list. After the script is done executing succesfully it will print a chef-solo command to run. Please copy and paste that command in the terminal.
 
 You can verify that the tomcat is running by accessing it at http://<code>ip-address</code>:8080/
