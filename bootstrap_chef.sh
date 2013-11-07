@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # call like this on the target server:
-# NODENAME='foo' CHEF_ENV='production' RUNLIST='["role[foo]","recipe[bar]"]' CHEFREPO='srinikancharla@https://github.com/SriniKancharla:cq-dev-server-provision.git'
+# NODENAME='foo' CHEF_ENV='production' bash < bootstrap_chef.sh
 # You will need to ensure that the ssh key is already set up on the server.
  
 set -e
 #export CHEFREPO='srinikancharla@https://github.com/SriniKancharla:cq-dev-server-provision.git' 
 export CHEF_DIR="${HOME}/chef"
+#export RUNLIST='["role[foo]","recipe[bar]"]'
+export RUNLIST='[ "recipe[apt]", "recipe[basedevserv]" ]'
+export CHEFREPO='git@github.com:SriniKancharla/cq-dev-server-provision'
+
 sudo rm -rf $CHEF_DIR
 mkdir -p "$CHEF_DIR"
  
