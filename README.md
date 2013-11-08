@@ -21,14 +21,31 @@ For bootstraping CentOS 6, use:
 
 <h3>Prerequisites</h3>
 Its assumed that you have access to a barebones server and the server can connect to the internet.
-Also, if you plan to use github repository to do the server build, Github requires you to authenticate with them. So you would first need to request to add your public SSH key to the github to be able to clone this repository. If you need steps to generate SSH keys on the barebones Linux server, here are the steps: <br>
+Github requires you to authenticate with them. So you would first need to request to add your public SSH key to the github to be able to clone this repository. If you need steps to generate SSH keys on the barebones Linux server, here are the steps: <br>
 https://help.github.com/articles/generating-ssh-keys
 
-After the ssh key is added, just copy the bootstrap script,(For bootstapping Ubuntu 12.04, use:
-bootstrap_chef.sh and For CentOS Use:  ) to the home folder of the user and run it.
+<h3>Provision</h3>
+After the ssh key is added, just copy the bootstrap script, (For bootstapping Ubuntu 12.04, use:
+bootstrap_chef.sh and For CentOS Use: foo-bar.sh) to the home folder of the user and run it.
 
 You will have to set execute flags on the file. e.g. chmod 755 bootstrap_chef.sh
 
-This would update and install all the nessesary software. The script would need you to confirm adding github.com to known hosts list. After the script is done executing succesfully it will print a chef-solo command to run. Please copy and paste that command in the terminal.
+This would update and install all the nessesary software. The script would need you to confirm adding github.com to known hosts list. After the script is done executing succesfully it will print a chef-solo command to run. Please copy and paste that command in the terminal and run it.
 
+<h5>Tomcat</h5>
 You can verify that the tomcat is running by accessing it at http://<code>ip-address</code>:8080/
+
+<h5>Git Server</h5>
+Login with your username and password to the server. Git server deamon should already be started when the server starts.
+
+<code>$ cd /srv/git <br>
+       $ mkdir repo_name.git <br>
+       $ cd repo_name.git <br>
+       $ git --bare init <br>
+</code>
+This creates a new repo on the git server. <br>
+
+In your local dev environment run git clone ssh://username@servername/srv/git/repo_name.git (where repo_name.git is your actual app repo directory) <br>
+·         cd into repo_name locally <br>
+·         Commit your local code <br>
+·         git push origin master <br>
