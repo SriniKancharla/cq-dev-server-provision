@@ -20,15 +20,18 @@ For bootstraping CentOS 6, use:
 
 
 <h3>Prerequisites</h3>
-Its assumed that you have access to a barebones server and the server can connect to the internet.
-Github requires you to authenticate with them. So you would first need to request to add your public SSH key to the github to be able to clone this repository. If you need steps to generate SSH keys on the barebones Linux server, here are the steps: <br>
-https://help.github.com/articles/generating-ssh-keys
+Its assumed that you have access to a barebones server and the server can connect to the internet. <br>
+You have a github account.
 
 <h3>Provision</h3>
-After the ssh key is added, just copy the bootstrap script, (For bootstapping Ubuntu 12.04, use:
-bootstrap_chef.sh and For CentOS Use: foo-bar.sh) to the home folder of the user and run it.
+To provision the barebones server just run the following command. <br>
 
-You will have to set execute flags on the file. e.g. chmod 755 bootstrap_chef.sh
+For Ubuntu:<br>
+<code>$GIT_USER='git_username' GIT_PASSWORD='git_password' bash < bootstrap_chef.sh </code> <br>
+
+For CentOS: <br>
+
+<b>Note:</b> You will have to set execute flags on the file. e.g. chmod 755 bootstrap_chef.sh
 
 This would update and install all the nessesary software. The script would need you to confirm adding github.com to known hosts list. After the script is done executing succesfully it will print a chef-solo command to run. Please copy and paste that command in the terminal and run it.
 
@@ -49,3 +52,5 @@ In your local dev environment run git clone ssh://username@servername/srv/git/re
 ·         cd into repo_name locally <br>
 ·         Commit your local code <br>
 ·         git push origin master <br>
+
+<b>Note:</b> You might need sudo access to run some of these commands.
