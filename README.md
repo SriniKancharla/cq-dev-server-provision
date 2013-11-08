@@ -20,8 +20,8 @@ For bootstraping CentOS 6, use:
 
 
 <h3>Prerequisites</h3>
-Its assumed that you have access to a barebones server and the server can connect to the internet. <br>
-You have a github account.
+1. Its assumed that you have access to a barebones server and the server can connect to the internet. <br>
+2. You have a github account.
 
 <h3>Provision</h3>
 To provision the barebones server just run the following command. <br>
