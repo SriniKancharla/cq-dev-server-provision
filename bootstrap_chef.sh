@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # call like this on the target server:
-# NODENAME='foo' CHEF_ENV='production' bash < bootstrap_chef.sh
+# NODENAME='foo' CHEF_ENV='production' GIT_USER='git_username' GIT_PASSWORD='git_password' bash < bootstrap_chef.sh
 # You will need to ensure that the ssh key is already set up on the server.
  
 set -e
@@ -8,7 +8,9 @@ set -e
 export CHEF_DIR="${HOME}/chef"
 #export RUNLIST='["role[foo]","recipe[bar]"]'
 export RUNLIST='[ "recipe[apt]", "recipe[basedevserv]" ]'
-export CHEFREPO='git@github.com:SriniKancharla/cq-dev-server-provision'
+#export CHEFREPO='git@github.com:SriniKancharla/cq-dev-server-provision'
+
+export CHEFREPO='https://$GIT_USER:$GIT_PASSWORD@github.com/SriniKancharla/cq-dev-server-provision.git'
 
 sudo rm -rf $CHEF_DIR
 mkdir -p "$CHEF_DIR"
@@ -46,7 +48,7 @@ echo "-- Cloning repository"
  
 cd $CHEF_DIR
 git clone $CHEFREPO .
- 
+
 echo "-- Setting up chef config"
  
 cat <<EOF > $CHEF_DIR/config/solo.rb
