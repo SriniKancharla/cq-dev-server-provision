@@ -18,7 +18,7 @@
 # limitations under the License.
 
 # remove the deprecated Ubuntu jdk packages
-default['java']['remove_deprecated_packages'] = true
+default['java']['remove_deprecated_packages'] = false
 
 # default jdk attributes
 default['java']['install_flavor'] = "oracle"
