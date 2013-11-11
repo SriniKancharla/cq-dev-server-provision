@@ -10,4 +10,5 @@ depends "java"
 depends "tomcat_latest"
 depends "subversion"
 depends "git"
-
+depends "git"
+depends "openldap"
