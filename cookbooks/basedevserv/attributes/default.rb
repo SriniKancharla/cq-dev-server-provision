@@ -4,5 +4,5 @@ node.default['java']['jdk_version'] = '7'
 node.default['java']['oracle']['accept_oracle_download_terms'] = true
 
 # Open LDAP Related Config attributes
-node['openldap']['domain'] = "example.com"
+node['domain'] = "example.com"
 node['openldap']['rootpw'] = nil
