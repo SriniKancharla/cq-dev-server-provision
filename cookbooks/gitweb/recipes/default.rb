@@ -41,7 +41,7 @@ web_app node['gitweb']['hostname'] do
   docroot "/usr/share/gitweb"
   ssl_certfile         ssl_certfile_path
   ssl_keyfile          ssl_keyfile_path
-  ssl_cabundle_used    ::File::exist?(ssl_cabundle_path)
+  ssl_cabundle_used    ::File.exist?(ssl_cabundle_path)
   ssl_cabundle         ssl_cabundle_path
 end
 
