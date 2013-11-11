@@ -26,7 +26,7 @@ default['openldap']['shadow_ou'] = 'people'
 default['openldap']['group_ou'] = 'groups'
 default['openldap']['automount_ou'] = 'automount'
 
-
+default['openldap']['domain'] = "example.com"
 
 if node['openldap']['domain'].length > 0
   default['openldap']['basedn'] = "dc=#{node['domain'].split('.').join(",dc=")}"
