@@ -15,4 +15,4 @@ node['jenkins']['server']['home'] = '/var/lib/jenkins'
 node['jenkins']['server']['user'] = 'jenkins_user'
 node['jenkins']['server']['port'] - '8081'
 node['jenkins']['server']['url'] - 'jenkins'
-node['jenkins']['server']['plugins'] = {"pmd", "email-ext", "m2release"}
+node['jenkins']['server']['plugins'] = ["pmd", "email-ext", "m2release"]
