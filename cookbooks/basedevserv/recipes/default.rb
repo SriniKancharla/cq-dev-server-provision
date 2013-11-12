@@ -9,6 +9,8 @@
 
 include_recipe "java"
 include_recipe "tomcat_latest"
+include_recipe "apache2"
 include_recipe "subversion"
 include_recipe "git::server"
 include_recipe "openldap::server"
+include_recipe "subversion::client"
