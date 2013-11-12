@@ -10,9 +10,9 @@ node.default['openldap']['basedn'] = 'example.com'
 #node.default['openldap']['server'] = "ldap.example.com"
 
 # Jenkins attributes
-node['jenkins']['server']['install_method'] = 'war'
-node['jenkins']['server']['home'] = '/var/lib/jenkins'
-node['jenkins']['server']['user'] = 'jenkins_user'
-node['jenkins']['server']['port'] - '8081'
-node['jenkins']['server']['url'] - 'jenkins'
-node['jenkins']['server']['plugins'] = ["pmd", "email-ext", "m2release"]
+node.default['jenkins']['server']['install_method'] = 'war'
+node.default['jenkins']['server']['home'] = '/var/lib/jenkins'
+node.default['jenkins']['server']['user'] = 'jenkins_user'
+node.default['jenkins']['server']['port'] - '8081'
+node.default['jenkins']['server']['url'] - 'jenkins'
+node.default['jenkins']['server']['plugins'] = ["pmd", "email-ext", "m2release"]
