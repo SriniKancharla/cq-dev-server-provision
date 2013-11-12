@@ -63,6 +63,8 @@ cat <<EOF > $CHEF_DIR/config/default.json
 { "chef_environment":"$CHEF_ENV","run_list": $RUNLIST }
 EOF
  
+sudo groupadd jenkins
+
 printf "
 === Run the following ===
 sudo chef-solo -c $CHEF_DIR/config/solo.rb
