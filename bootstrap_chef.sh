@@ -13,8 +13,10 @@ sudo rm -rf $CHEF_DIR
 mkdir -p "$CHEF_DIR"
  
 echo "-- Installing Packages"
+
+sudo apt-get update
  
-yes | sudo apt-get install --fix-missing ruby ruby-dev libopenssl-ruby rdoc ri irb build-essential wget ssl-cert git-core
+yes | sudo apt-get install ruby ruby-dev libopenssl-ruby rdoc ri irb build-essential wget ssl-cert git-core
 
 echo "-- Installing RubyGems"
  
