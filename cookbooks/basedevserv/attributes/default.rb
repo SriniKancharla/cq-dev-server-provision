@@ -15,4 +15,4 @@ node.default['jenkins']['server']['home'] = '/var/lib/jenkins'
 node.default['jenkins']['server']['user'] = 'jenkins_user'
 node.default['jenkins']['server']['port'] - '8081'
 node.default['jenkins']['server']['url'] - 'jenkins'
-node.default['jenkins']['server']['plugins'] = ["pmd", "email-ext", "m2release"]
+node.default['jenkins']['server']['plugins'] = ["pmd", "m2release"]
