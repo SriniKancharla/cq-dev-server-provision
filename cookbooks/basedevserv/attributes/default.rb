@@ -13,6 +13,7 @@ node.default['openldap']['basedn'] = 'example.com'
 node.default['jenkins']['server']['install_method'] = 'war'
 node.default['jenkins']['server']['home'] = '/var/lib/jenkins'
 node.default['jenkins']['server']['user'] = 'jenkins_user'
+node.default['jenkins']['server']['group'] = 'jenkins'
 node.default['jenkins']['server']['port'] = 8080
 node.default['jenkins']['server']['url'] = 'http://localhost'
 node.default['jenkins']['server']['plugins'] = ["pmd", "email-ext", "m2release"]
