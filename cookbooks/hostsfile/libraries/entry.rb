@@ -3,7 +3,8 @@
 # Cookbook:: hostsfile
 # Library:: entry
 #
-# Copyright 2012, Seth Vargo, CustomInk, LCC
+# Copyright 2012-2013, Seth Vargo
+# Copyright 2012, CustomInk, LCC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,21 +44,22 @@ class Entry
       return nil if entries.nil? || entries.empty?
 
       return self.new(
-        :ip_address => entries[0],
-        :hostname => entries[1],
-        :aliases => entries[2..-1],
-        :comment => comment,
-        :priority => priority
+        ip_address: entries[0],
+        hostname:   entries[1],
+        aliases:    entries[2..-1],
+        comment:    comment,
+        priority:   priority,
       )
     end
 
     private
       def extract_comment(line)
+        return nil if presence(line).nil?
         line.split('#', 2).collect { |part| presence(part) }
       end
 
       def extract_priority(comment)
-        return [nil, nil] if comment.nil?
+        return nil if comment.nil?
 
         if comment.include?('@')
           comment.split('@', 2).collect { |part| presence(part) }
@@ -103,11 +105,11 @@ class Entry
       raise ArgumentError, ':ip_address and :hostname are both required options'
     end
 
-    @ip_address = IPAddr.new(options[:ip_address])
-    @hostname = options[:hostname]
-    @aliases = [options[:aliases]].flatten.compact
-    @comment = options[:comment]
-    @priority = options[:priority] || calculated_priority
+    @ip_address = IPAddr.new(options[:ip_address].to_s)
+    @hostname   = options[:hostname]
+    @aliases    = [options[:aliases]].flatten.compact
+    @comment    = options[:comment]
+    @priority   = options[:priority] || calculated_priority
   end
 
   # Set a the new priority for an entry.
@@ -134,30 +136,12 @@ class Entry
     [ip_address, hosts, comments].compact.join("\t").strip
   end
 
-  # The string representation of this Entry
+  # Returns true if priority is calculated
   #
-  # @return [String]
-  #   the string representation of this entry
-  def to_s
-    "#<#{self.class.to_s} " + [
-      "ip_address: '#{ip_address}'",
-      "hostname: '#{hostname}'",
-    ].join(', ') + '>'
-  end
-
-  # The object representation of this Entry
-  #
-  # @return [String]
-  #   the object representation of this entry
-  def inspect
-    "#<#{self.class.to_s} " + [
-      "ip_address: '#{ip_address}'",
-      "hostname: '#{hostname}'",
-      "aliases: #{aliases.inspect}",
-      "comment: '#{comment}'",
-      "priority: #{priority}",
-      "calculated_priority?: #{@calculated_priority}",
-    ].join(', ') + '>'
+  # @return [Boolean]
+  #   true if priority is calculated and false otherwise
+  def calculated_priority?
+    @calculated_priority
   end
 
   private

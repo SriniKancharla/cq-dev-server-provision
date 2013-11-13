@@ -72,11 +72,11 @@ class Manipulator
   #   the relative priority of this entry (compared to others)
   def add(options = {})
     entry = Entry.new(
-      ip_address: options[:ip_address],
-      hostname:   options[:hostname],
-      aliases:    options[:aliases],
-      comment:    options[:comment],
-      priority:   options[:priority],
+      ip_address => options[:ip_address],
+      hostname => options[:hostname],
+      aliases => options[:aliases],
+      comment => options[:comment],
+      priority => options[:priority],
     )
 
     @entries << entry
