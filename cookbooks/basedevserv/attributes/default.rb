@@ -15,7 +15,7 @@ node.default['jenkins']['server']['home'] = '/var/lib/jenkins'
 node.default['jenkins']['server']['user'] = 'jenkins_user'
 node.default['jenkins']['server']['group'] = 'jenkins'
 node.default['jenkins']['server']['port'] = 8082
-node.default['jenkins']['server']['url'] = 'http://192.168.42.80:8082'
+node.default['jenkins']['server']['url'] = 'http://localhost:8082'
 node.default['jenkins']['server']['plugins'] = ['pmd', 'email-ext', 'm2release']
 
 node.default[:nexus][:port] = '8081'

@@ -8,7 +8,6 @@ version          '0.1.0'
 
 depends "java"
 depends "tomcat_latest"
-depends "apache2"
 depends "subversion"
 depends "git"
 #depends "openldap"
