@@ -20,4 +20,4 @@ node.default['jenkins']['server']['plugins'] = ['analysis-core', 'pmd', 'email-e
 
 node.default[:nexus][:port] = '8081'
 
-default['apache']['listen_ports']      = %w[81]
+node.default['apache']['listen_ports'] = %w[81]
