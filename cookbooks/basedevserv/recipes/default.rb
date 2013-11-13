@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "apache2"
 include_recipe "java"
 include_recipe "tomcat_latest"
 include_recipe "subversion"
