@@ -17,10 +17,10 @@ include_recipe "subversion::server"
 include_recipe "jenkins::server"
 include_recipe "nexus::default"
 
-hostsfile_entry "127.0.1.1" do
-  hostname "ldap.example.com"
-  action :append
-end
+# hostsfile_entry "127.0.1.1" do
+#   hostname "ldap.example.com"
+#   action :append
+# end
 
 directory node[:openldap][:ssl_dir] do
   owner "root"
