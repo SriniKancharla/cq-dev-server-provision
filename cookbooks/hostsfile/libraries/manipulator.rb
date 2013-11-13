@@ -237,7 +237,7 @@ class Manipulator
           hostname => entry.hostname,
           aliases => entry.aliases,
           comment => entry.comment,
-          priority => !entry.calculated_priority? && entry.priority,
+          priority => !entry.calculated_priority? && entry.priority
         )
       end
     end
