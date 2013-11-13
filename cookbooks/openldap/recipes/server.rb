@@ -81,12 +81,12 @@ if (node['platform'] == "ubuntu")
     action :create
   end
 
-  # execute "slapd-config-convert" do
-  #   command "slaptest -f #{node['openldap']['dir']}/slapd.conf -F #{node['openldap']['dir']}/slapd.d/"
-  #   user "openldap"
-  #   action :nothing
-  #   notifies :start, "service[slapd]", :immediately
-  # end
+  execute "slapd-config-convert" do
+    command "slaptest -f #{node['openldap']['dir']}/slapd.conf -F #{node['openldap']['dir']}/slapd.d/"
+    user "openldap"
+    action :nothing
+    notifies :start, "service[slapd]", :immediately
+  end
 
   template "#{node['openldap']['dir']}/slapd.conf" do
     source "slapd.conf.erb"
@@ -94,7 +94,7 @@ if (node['platform'] == "ubuntu")
     owner "openldap"
     group "openldap"
     notifies :stop, "service[slapd]", :immediately
-    # notifies :run, "execute[slapd-config-convert]"
+    notifies :run, "execute[slapd-config-convert]"
   end
 else
   case node['platform']
