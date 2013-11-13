@@ -63,7 +63,7 @@ cat <<EOF > $CHEF_DIR/config/default.json
 { "chef_environment":"$CHEF_ENV","run_list": $RUNLIST }
 EOF
  
-sudo groupadd jenkins
+sudo groupadd jenkins || true
 
 printf "
 === Run the following ===
