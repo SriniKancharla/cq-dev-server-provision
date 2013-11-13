@@ -48,7 +48,7 @@ class Entry
         hostname => entries[1],
         aliases => entries[2..-1],
         comment => comment,
-        priority => priority,
+        priority => priority
       )
     end
 
