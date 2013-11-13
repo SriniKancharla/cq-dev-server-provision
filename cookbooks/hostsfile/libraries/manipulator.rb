@@ -233,11 +233,11 @@ class Manipulator
         next if entry.nil?
 
         append(
-          ip_address: entry.ip_address,
-          hostname:   entry.hostname,
-          aliases:    entry.aliases,
-          comment:    entry.comment,
-          priority:   !entry.calculated_priority? && entry.priority,
+          ip_address => entry.ip_address,
+          hostname => entry.hostname,
+          aliases => entry.aliases,
+          comment => entry.comment,
+          priority => !entry.calculated_priority? && entry.priority,
         )
       end
     end
