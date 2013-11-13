@@ -5,9 +5,12 @@ node.default['java']['oracle']['accept_oracle_download_terms'] = true
 
 # Open LDAP Related Config attributes
 node.default['domain'] = "example.com"
-node.default['openldap']['rootpw'] = 'password'
-node.default['openldap']['basedn'] = 'example.com'
+node.default['openldap']['rootpw'] = "password"
+node.default['openldap']['basedn'] = "example.com"
 #node.default['openldap']['server'] = "ldap.example.com"
+node.default[:certs] = [ '/etc/ldap/ssl/ldap.example.com.crt',
+                         '/etc/ldap/ssl/ldap.example.com.key',
+                         '/etc/ldap/ssl/ldap.example.com.pem' ]
 
 # Jenkins attributes
 node.default['jenkins']['server']['install_method'] = 'war'
