@@ -19,3 +19,5 @@ node.default['jenkins']['server']['url'] = 'http://localhost:8082'
 node.default['jenkins']['server']['plugins'] = ['analysis-core', 'pmd', 'email-ext', 'm2release']
 
 node.default[:nexus][:port] = '8081'
+
+default['apache']['listen_ports']      = %w[81]
