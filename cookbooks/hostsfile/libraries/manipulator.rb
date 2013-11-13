@@ -76,7 +76,7 @@ class Manipulator
       hostname => options[:hostname],
       aliases => options[:aliases],
       comment => options[:comment],
-      priority => options[:priority],
+      priority => options[:priority]
     )
 
     @entries << entry
