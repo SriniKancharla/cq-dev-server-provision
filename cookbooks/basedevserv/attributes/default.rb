@@ -10,14 +10,6 @@ node.default['openldap-server'][:root_user_attr] = "cn=admin"
 node.default['openldap-server'][:db_dir] = '/var/lib/ldap'
 #node['openldap-server'][:db_ldif] = 'db.ldif.erb'
 
-# node.default['domain'] = "example.com"
-# node.default['openldap']['rootpw'] = "password"
-# node.default['openldap']['basedn'] = "dc=example,dc=com"
-# #node.default['openldap']['server'] = "ldap.example.com"
-# node.default[:certs] = [ '/etc/ldap/ssl/ldap.example.com.crt',
-#                          '/etc/ldap/ssl/ldap.example.com.key',
-#                          '/etc/ldap/ssl/ldap.example.com.pem' ]
-
 # Jenkins attributes
 node.default['jenkins']['server']['install_method'] = 'war'
 node.default['jenkins']['server']['home'] = '/var/lib/jenkins'
