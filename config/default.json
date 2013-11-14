@@ -1,0 +1,1 @@
+{ "mysql": { "server_root_password": "admin", "server_repl_password": "admin", "server_debian_password": "admin" }, "run_list":["recipe[mysql::server]"] }
