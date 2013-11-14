@@ -4,10 +4,10 @@ node.default['java']['jdk_version'] = '7'
 node.default['java']['oracle']['accept_oracle_download_terms'] = true
 
 # Open LDAP Related Config attributes
-node['openldap-server'][:domain] = 'example.com'
-node['openldap-server'][:rootpw] = 'password'
-node['openldap-server'][:root_user_attr] = "cn=admin"
-node['openldap-server'][:db_dir] = '/var/lib/ldap'
+node.default['openldap-server'][:domain] = 'example.com'
+node.default['openldap-server'][:rootpw] = 'password'
+node.default['openldap-server'][:root_user_attr] = "cn=admin"
+node.default['openldap-server'][:db_dir] = '/var/lib/ldap'
 #node['openldap-server'][:db_ldif] = 'db.ldif.erb'
 
 # node.default['domain'] = "example.com"
