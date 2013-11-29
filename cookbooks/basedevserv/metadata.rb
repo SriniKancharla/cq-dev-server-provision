@@ -1,6 +1,6 @@
 name             'basedevserv'
-maintainer       'Headwire Inc.'
-maintainer_email 'sk@headwire.com'
+maintainer       'Srini K'
+maintainer_email 'sk@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures basedevserv'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
